@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "80dba854-83a1-472d-b0af-b11ad49dc76d",
+		"name": "Tienda de Videojuegos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24009805"
+	},
+	"item": [
+		{
+			"name": "Consulta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/juegos/v1/Consulta",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"juegos",
+						"v1",
+						"Consulta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Catalogo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/juegos/v1/Catalogo?opc=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"juegos",
+						"v1",
+						"Catalogo"
+					],
+					"query": [
+						{
+							"key": "opc",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"\",\r\n    \"descripcion\": \"\",\r\n    \"anio\": 0,\r\n    \"calificacion\": 0,\r\n    \"idConsola\": 0,\r\n    \"idGenero\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/juegos/v1/Agregar",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"juegos",
+						"v1",
+						"Agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edita",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 0,\r\n    \"titulo\": \"\",\r\n    \"descripcion\": \"\",\r\n    \"anio\": 0,\r\n    \"calificacion\": 0,\r\n    \"idConsola\": 0,\r\n    \"idGenero\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/juegos/v1/Edita",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"juegos",
+						"v1",
+						"Edita"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Elimina",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/juegos/v1/Elimina?idvj=0",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"juegos",
+						"v1",
+						"Elimina"
+					],
+					"query": [
+						{
+							"key": "idvj",
+							"value": "0",
+							"description": "Id del registro que se desea eliminar"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "https://localhost:44334"
+		}
+	]
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./framework/bootstrap-5.3.0/css/bootstrap.min.css" />
+</head>
+<body class="container">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href="index.html" class="nav-link">Listado</a></li>
+        <li class="nav-item"><a href="agregar.html" class="nav-link active"  aria-current="page">Agregar</a></li>
+    </ul>
+  </header>
+  <br/>
+  <main>
+    
+    <div class="row g-5">  
+      <div class="col-md-12 col-lg-12">
+        <h4 class="mb-3">Nuevo Videojuego</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+
+            <div class="col-sm-12">
+              <label for="txtTitulo" class="form-label">Titulo</label>
+              <input type="text" class="form-control" id="txtTitulo" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Es requerido un titulo.
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <label for="txtDescripcion" class="form-label">Descripcion</label>
+              <textarea class="form-control" id="txtDescripcion"></textarea>
+            </div>
+
+            <div class="col-sm-3">
+              <label for="cbxGenero" class="form-label">Genero</label>
+              <select class="form-select" id="cbxGenero" required="">
+                <option value="">Elije una opcion</option>
+              </select>
+              <div class="invalid-feedback">
+                Aun no se ha seleccionado un genero.
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <label for="cbxConsola" class="form-label">Consola</label>
+              <select class="form-select" id="cbxConsola" required="">
+                <option value="">Elije una opcion</option>
+              </select>
+              <div class="invalid-feedback">
+                Aun no se ha seleccionado una consola.
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <label for="cbxCalificacion" class="form-label">Calificacion</label>
+              <select class="form-select" id="cbxCalificacion" required="">
+                <option value="">Elije una opcion</option>
+              </select>
+              <div class="invalid-feedback">
+                Aun no se ha seleccionado una Calificacion
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <label for="cbxAnio" class="form-label">Año</label>
+              <select class="form-select" id="cbxAnio" required="">
+                <option value="">Elije una opcion</option>
+              </select>
+              <div class="invalid-feedback">
+                Aun no se ha seleccionado un Año
+              </div>
+            </div>
+          
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" id="btnAgregar" type="button">Agregar Nuevo Juego</button>
+        </form>
+      </div>
+    </div>
+  </main>
+    
+</body>
+</html>
+<script src="./framework/jquery-3.6.4.min.js"></script>
+<script src="./framework/bootstrap-5.3.0/js/bootstrap.min.js"></script>
+<script src="./js/constantes.js"></script>
+<script src="./js/http.js"></script>
+<script src="./js/agregar.js"></script>
