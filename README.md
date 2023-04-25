@@ -45,5 +45,5 @@ Una vez ya verificado que todo esta correctamente primero se debe de ejecutar la
 Carpeta que tiene un par de scripts 
 
 ### C#
--ValidaFrasePalindromo
--ValidaNumerosPrimos
+- ValidaFrasePalindromo
+- ValidaNumerosPrimos
