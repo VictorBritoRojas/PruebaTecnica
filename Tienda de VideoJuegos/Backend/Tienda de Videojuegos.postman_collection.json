@@ -26,6 +26,31 @@
 			"response": []
 		},
 		{
+			"name": "ConsultaUno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/juegos/v1/ConsultaUno?id=1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"juegos",
+						"v1",
+						"ConsultaUno"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Catalogo",
 			"request": {
 				"method": "GET",

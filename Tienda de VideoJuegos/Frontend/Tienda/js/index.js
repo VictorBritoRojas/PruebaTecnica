@@ -12,24 +12,20 @@ $(function(){
         peticion(config,function(listaTmp){
             if(listaTmp.bandera > 0) {
                 $.each(listaTmp.resultado,function(it, i){
-                    console.log(it);
-                    console.log(i);
-                    let tmp = $("<tr>");
-                    tmp.append($("<th>",{scope:"row", html:"valor"}));
-                    tmp.append($("<td>",{html:"valor"}));
-                    tmp.append($("<td>",{html:"valor"}));
-                    tmp.append($("<td>",{html:"valor"}));
-                    tmp.append($("<td>",{html:"valor"}));
-                    tmp.append($("<td>",{html:"valor"}));
-                    tmp.append($("<td>",{html:"valor"}));
-                    tmp.append($("<td>",{html:$("<span>",{class:"badge text-bg-danger",html:"Eliminar"})}));
-                    tabla.find("tbody").append(tmp);
+                    let tmp = $("<tr>",{id:i.id});
+                    tmp.append($("<td>",{html:$("<a>",{html:i.id,href:"editar.html?id="+i.id})}));
+                    tmp.append($("<td>",{html:i.titulo}));
+                    tmp.append($("<td>",{html:i.descripcion}));
+                    tmp.append($("<td>",{html:i.anio}));
+                    tmp.append($("<td>",{html:i.calificacion}));
+                    tmp.append($("<td>",{html:i.consola}));
+                    tmp.append($("<td>",{html:i.genero}));
+                    tabla.find("#cuerpo").append(tmp);
                 });
             }
-            console.log(listaTmp);
         });
     }
-    
+
     obtenerControles();
     obtenerLista();
 });

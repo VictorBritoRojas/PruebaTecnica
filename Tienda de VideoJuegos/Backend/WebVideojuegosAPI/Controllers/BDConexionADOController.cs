@@ -164,7 +164,7 @@ namespace WebVideojuegosAPI.Controllers
 
         [HttpPost]
         [Route("Agregar")]
-        public JsonResult Post([FromBody] Videojuegos keyValues)
+        public JsonResult Post([FromBody] VideojuegoUpADD keyValues)
         {
             try
             {
@@ -209,7 +209,7 @@ namespace WebVideojuegosAPI.Controllers
 
         [HttpPut]
         [Route("Edita")]
-        public JsonResult Put([FromBody] Videojuegos keyValues)
+        public JsonResult Put([FromBody] VideojuegoUpADD keyValues)
         {
             try
             {

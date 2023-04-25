@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [PTVideojuegos]    Script Date: 25/04/2023 07:13:16 a. m. ******/
+/****** Object:  Database [PTVideojuegos]    Script Date: 25/04/2023 09:10:26 a. m. ******/
 CREATE DATABASE [PTVideojuegos]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [PTVideojuegos] SET QUERY_STORE = OFF
 GO
 USE [PTVideojuegos]
 GO
-/****** Object:  Table [dbo].[TBConsola]    Script Date: 25/04/2023 07:13:16 a. m. ******/
+/****** Object:  Table [dbo].[TBConsola]    Script Date: 25/04/2023 09:10:26 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[TBConsola](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TBGenero]    Script Date: 25/04/2023 07:13:17 a. m. ******/
+/****** Object:  Table [dbo].[TBGenero]    Script Date: 25/04/2023 09:10:26 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -110,7 +110,7 @@ CREATE TABLE [dbo].[TBGenero](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TBVideojuego]    Script Date: 25/04/2023 07:13:17 a. m. ******/
+/****** Object:  Table [dbo].[TBVideojuego]    Script Date: 25/04/2023 09:10:26 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -187,17 +187,7 @@ INSERT [dbo].[TBGenero] ([id], [nombre]) VALUES (10, N'Musical')
 GO
 SET IDENTITY_INSERT [dbo].[TBGenero] OFF
 GO
-ALTER TABLE [dbo].[TBVideojuego]  WITH CHECK ADD  CONSTRAINT [FK_TBVideojuego_TBConsola] FOREIGN KEY([idConsola])
-REFERENCES [dbo].[TBConsola] ([id])
-GO
-ALTER TABLE [dbo].[TBVideojuego] CHECK CONSTRAINT [FK_TBVideojuego_TBConsola]
-GO
-ALTER TABLE [dbo].[TBVideojuego]  WITH CHECK ADD  CONSTRAINT [FK_TBVideojuego_TBGenero] FOREIGN KEY([idGenero])
-REFERENCES [dbo].[TBGenero] ([id])
-GO
-ALTER TABLE [dbo].[TBVideojuego] CHECK CONSTRAINT [FK_TBVideojuego_TBGenero]
-GO
-/****** Object:  StoredProcedure [dbo].[SPAgregar]    Script Date: 25/04/2023 07:13:17 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[SPAgregar]    Script Date: 25/04/2023 09:10:27 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -248,7 +238,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SPCatalogo]    Script Date: 25/04/2023 07:13:17 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[SPCatalogo]    Script Date: 25/04/2023 09:10:27 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -281,7 +271,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SPConsultar]    Script Date: 25/04/2023 07:13:17 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[SPConsultar]    Script Date: 25/04/2023 09:10:27 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -308,7 +298,7 @@ BEGIN
 	END
 	ELSE
 	BEGIN
-		SELECT a.id 'Id', titulo 'Titulo', descripcion 'Descripcion', anio 'Año', calificacion 'Calificacion', b.nombre 'Consola', c.nombre 'Genero'
+		SELECT a.id 'Id', titulo 'Titulo', descripcion 'Descripcion', anio 'Año', calificacion 'Calificacion', a.idConsola 'Consola', a.idGenero 'Genero'
 		FROM dbo.TBVideojuego a
 		INNER JOIN dbo.TBConsola b ON a.idConsola = b.id
 		INNER JOIN dbo.TBGenero c ON a.idConsola = c.id
@@ -319,7 +309,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SPEditar]    Script Date: 25/04/2023 07:13:17 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[SPEditar]    Script Date: 25/04/2023 09:10:27 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -363,7 +353,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SPEliminar]    Script Date: 25/04/2023 07:13:17 a. m. ******/
+/****** Object:  StoredProcedure [dbo].[SPEliminar]    Script Date: 25/04/2023 09:10:27 a. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

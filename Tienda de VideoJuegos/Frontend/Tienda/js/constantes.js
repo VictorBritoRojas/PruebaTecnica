@@ -4,11 +4,6 @@ const listAnios = [1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2
 
 const listCalificacion = [1,2,3,4,5,6,7,8,9,10];
 
-const clsCatologo = {
-    id:"",
-    txt:""
-};
-
 const clsVideojuego = {
     id: 0,
     titulo: "",
